@@ -1,22 +1,27 @@
-var convert = function(str, numRows) {
+var convert = function(s, numRows) {
+    const result = [];
 
-    if(numRows === 1) {
-        return str;
+    if(numRows < 2) {
+        return s;
     }
 
-    var result = '';
-    const step = 2 * numRows - 2
+    for(let i = 0; i < numRows; i++) {
+        let j = i;
+        while (j < s.length) {
+            result.push(s[j]);
 
-    for(var i = 0; i < numRows; i++) {
-        for(var j = 0; j + i < n; j += step) {
-            result += str[j + i];
+        if (i !== 0 && i !== numRows - 1) {
+            const k = (numRows - i) * 2 - 1 - 1 +j;
             
-            if(i !== 0 && i !== numRows - 1 && j + step - i < n) {
-                result += str[j + step - i]
+            if (k < s.length) {
+                result.push(s[k]);
             }
         }
+
+            j += numRows * 2 - 1 - 1;
+        }
     }
-    return result;
+    return result.join('');
 }
 
-console.log(str,numRows)
+console.log(numRows(convert))

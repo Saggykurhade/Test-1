@@ -1,5 +1,9 @@
-var array = [[1, 4, 5],[1, 3, 4],[2,6]]
+var array1 = [[1, 4, 5],[1, 3, 4],[2,6]]
 
-console.log(array.flat(Infinity))
+console.log(array1.flat(Infinity))
 
-// console.log(array.flat(1))
+var array2 = [...array1];
+
+array2.sort((a, b) => a - b)
+console.log(array2.flat(Infinity))
+
