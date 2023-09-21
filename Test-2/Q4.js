@@ -1,18 +1,18 @@
-var array1 = ['a', 'b', 'c'];
-var array2 = ['p', 'q', 'r']
+var l1 = [];
+var l2 = [];
 
-Result newArray;
-
-function mergedList (array) {
-    for(var i = 0;i < array1.length;i++) {
-        for(var j =0;j < array2.length;j++) {
-            if ([array1,array2] == newArray[i] ) {
-                array.push(newArray[i].length)
-            }
-        }
-        return newArray
-    }
+function mergeTwoLists (l1, l2) {
     
-}
+    if (!l1) return l2;
+    if (!l2) return l1;
+    
+    if (l1.val < l2.val) {
+        l1 = mergeTwoLists(l2);
+        return l1;
+    } else {
+        l2 = mergeTwoLists(l1);
+        return l2;
+    }
+};
 
-console.log(mergedList(array1,array2))
+console.log(mergeTwoLists(l1,l2))
