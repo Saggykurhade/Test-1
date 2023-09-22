@@ -1,15 +1,12 @@
-const head = [1, 2, 3, 4];
+const array = [1, 2, 3, 4];
 
-var result = [];
-function swapPairs(head) {
-    if (!head || !head.next) {
-        return head;
-    }
-    var newHead = head.next;
-    head.next = swapPairs(newHead.next);
-    newHead.next = head;
-    return newHead;
-    result.push(newHead.next)
-};
+var i = 0;
 
-console.log(swapPairs(head))
+while (i < array.length) {
+    var j = i + 1;
+    var temp = array[i];
+    array[i]= array[j];
+    array[j]= temp; 
+    i = i + 2;    
+}
+console.log(array);
